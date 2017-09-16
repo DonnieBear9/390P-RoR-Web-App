@@ -15,5 +15,15 @@
   <%= @section.section_room %>
 </p>
 
+<p>
+  <strong>Professor:</strong>
+  <%= @section.professor.name%>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @section.course.course_name %>
+</p>
+
 <%= link_to 'Edit', edit_section_path(@section) %> |
 <%= link_to 'Back', sections_path %>

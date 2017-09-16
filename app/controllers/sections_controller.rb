@@ -15,15 +15,21 @@ class SectionsController < ApplicationController
   # GET /sections/new
   def new
     @section = Section.new
+    @professors = Professor.all
+    @courses = Course.all
   end
 
   # GET /sections/1/edit
   def edit
+    @professors = Professor.all
+    @courses = Course.all
   end
 
   # POST /sections
   # POST /sections.json
   def create
+    @professors = Professor.all
+    @courses = Course.all
     @section = Section.new(section_params)
 
     respond_to do |format|
