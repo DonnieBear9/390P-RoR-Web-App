@@ -8,14 +8,15 @@
     <%= submit_tag("Search") %>
 <% end %>
 
-<table>
+<table class="table" style="width:100">
   <thead>
     <tr>
-      <th>Section number</th>
-      <th>Section building</th>
-      <th>Section room</th>
-      <th>Professor<th>
-      <th>Course<th>
+      <th>Sections</th>
+      <th align="left">Section number</th>
+      <th style="width:15%" style="width:15%">Section building</th>
+      <th style="width:15%">Professor</th>
+      <th style="width:15%">Section room<th>
+      <th style="width:15%">Course<th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,14 +24,14 @@
   <tbody>
     <% @sections.each do |section| %>
       <tr>
-        <td><%= section.section_number %></td>
-        <td><%= section.section_building %></td>
-        <td><%= section.section_room %></td>
-        <td><%= section.professor.name %></td>
-        <td><%= section.course.course_name %></td>
-        <td><%= link_to 'Show', section %></td>
-        <td><%= link_to 'Edit', edit_section_path(section) %></td>
-        <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td align=left><%= section.section_number %></td>
+        <td align=left><%= section.section_building %></td>
+        <td align=left><%= section.section_room %></td>
+        <td align=left><%= section.professor.name %></td>
+        <td align=left><%= section.course.course_name %></td>
+        <td align=left><%= link_to 'Show', section %></td>
+        <td align=left><%= link_to 'Edit', edit_section_path(section) %></td>
+        <td align=left><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
     Go to <a href="/professors">Professors
@@ -39,4 +40,4 @@
 
 <br>
 <%= link_to 'log out', destroy_user_session_path, method: :delete %>
-<%= link_to 'New Section', new_section_path %>
+<%= link_to 'New Section', new_section_path, :method => "get" %>

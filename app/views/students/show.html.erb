@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+
+<p>
+  <strong>Credits:</strong>
+  <%= @student.credits %>
+</p>
+
+<p>
+  <strong>Student class:</strong>
+  <%= @student.student_class %>
+</p>
+
+<p>
+	<strong>Classes:</strong>
+  <table class="table">
+    <thread>
+      <tr>
+        <th>Course:</th>
+        <th>Section Number</th>
+        <th>Professor</th>
+        <th>Section Information</th>
+      </tr>
+
+      <tbody>
+        <% @student.sections.each do |section| %>
+        <tr>
+          <td><%= section.course.course_name %></td>
+          <td><%= section.section_number %></td>
+          <td><%= section.professor.name %></td>
+          <td><%= link_to 'show', section %></td>
+        </tr>
+        <% end %>
+      </tbody>
+
+  </thread>
+</table>
+</p>
+
+<div class="btn-group">
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

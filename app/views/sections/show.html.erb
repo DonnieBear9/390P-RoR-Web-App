@@ -25,5 +25,26 @@
   <%= @section.course.course_name %>
 </p>
 
+<p>
+  <strong>Student List</strong>
+  <table class="table">
+    <thread>
+      <tr>
+        <th>Student Name</th>
+      </tr>
+
+      <tbody>
+        <% @section.students.each do |student| %>
+        <tr>
+          <td><%= student.name %></td>
+        </tr>
+        <% end %>
+      </tbody>
+
+  </thread>
+</table>
+</p>
+
+
 <%= link_to 'Edit', edit_section_path(@section) %> |
 <%= link_to 'Back', sections_path %>

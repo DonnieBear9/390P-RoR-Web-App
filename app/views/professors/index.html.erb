@@ -8,12 +8,12 @@
     <%= submit_tag("Search") %>
     <% end %>
 
-<table>
+<table class="table" style="width:65%">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Office building</th>
-      <th>Room number</th>
+      <th style="width:20%">Name</th>
+      <th style="width:20%">Office building</th>
+      <th style="width:20%">Room number</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,9 +21,9 @@
   <tbody>
     <% @professors.each do |professor| %>
       <tr>
-        <td><%= professor.name %></td>
-        <td><%= professor.office_building %></td>
-        <td><%= professor.room_number %></td>
+        <td align=left><%= professor.name %></td>
+        <td align=left><%= professor.office_building %></td>
+        <td align=left><%= professor.room_number %></td>
         <td><%= link_to 'Show', professor %></td>
         <td><%= link_to 'Edit', edit_professor_path(professor) %></td>
         <td><%= link_to 'Destroy', professor, method: :delete, data: { confirm: 'Are you sure?' } %></td>

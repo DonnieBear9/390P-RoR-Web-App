@@ -5,5 +5,27 @@
   <%= @course.course_name %>
 </p>
 
+<p>
+  <strong>Sections:</strong>
+  <table class="table">
+    <thread>
+      <tr>
+        <th>Section Number</th>
+        <th>professor</th>
+      </tr>
+
+      <tbody>
+        <% @course.sections.each do |section| %>
+        <tr>
+          <td><%= section.section_number %></td>
+          <td><%= section.professor.name %></td>
+        </tr>
+        <% end %>
+      </tbody>
+
+  </thread>
+</table>
+</p>
+
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

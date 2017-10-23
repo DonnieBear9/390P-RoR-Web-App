@@ -1,5 +1,7 @@
 {
   "name": "Assignment_One_Final",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "i18n": "^0.8.3"
+  }
 }
